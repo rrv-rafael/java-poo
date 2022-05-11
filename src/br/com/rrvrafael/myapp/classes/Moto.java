@@ -26,7 +26,7 @@ public class Moto extends Veiculo {
     @Override
     public void frear() throws FrenagemVeiculoDesligadoException {
         if (this.isLigado()) {
-            velocidade += 3;
+            velocidade -= 3;
         } else {
             throw new FrenagemVeiculoDesligadoException();
         }
