@@ -5,7 +5,7 @@ import br.com.rrvrafael.myapp.exceptions.AceleracaoVeiculoLigadoException;
 import br.com.rrvrafael.myapp.exceptions.ChassiInvalidoException;
 import br.com.rrvrafael.myapp.exceptions.FrenagemVeiculoDesligadoException;
 
-public class Veiculo {
+public abstract class Veiculo {
     private String nome;
     private String marca;
     private String chassi;

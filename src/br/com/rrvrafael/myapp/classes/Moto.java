@@ -3,7 +3,7 @@ package br.com.rrvrafael.myapp.classes;
 import br.com.rrvrafael.myapp.exceptions.AceleracaoVeiculoLigadoException;
 import br.com.rrvrafael.myapp.exceptions.FrenagemVeiculoDesligadoException;
 
-public class Moto extends Veiculo {
+public final class Moto extends Veiculo {
     public Moto() {
         quantidadeRodas = 2;
     }

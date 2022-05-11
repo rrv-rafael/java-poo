@@ -1,6 +1,6 @@
 package br.com.rrvrafael.myapp.classes;
 
-public class Carro extends Veiculo {
+public final class Carro extends Veiculo {
     private int quantidadePortas;
 
     public Carro() {
@@ -20,6 +20,4 @@ public class Carro extends Veiculo {
     public void setQuantidadePortas(int quantidadePortas) {
         this.quantidadePortas = quantidadePortas;
     }
-
-    
 }
