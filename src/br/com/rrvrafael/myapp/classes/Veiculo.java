@@ -1,7 +1,9 @@
 package br.com.rrvrafael.myapp.classes;
 
 import br.com.rrvrafael.myapp.exceptions.AbastecimentoVeiculoLigadoException;
+import br.com.rrvrafael.myapp.exceptions.AceleracaoVeiculoLigadoException;
 import br.com.rrvrafael.myapp.exceptions.ChassiInvalidoException;
+import br.com.rrvrafael.myapp.exceptions.FrenagemVeiculoDesligadoException;
 
 public class Veiculo {
     private String nome;
@@ -10,9 +12,11 @@ public class Veiculo {
     protected int quantidadeRodas;
     private double quantidadeCombustivel;
     private boolean ligado;
+    private double velocidade;
     
     public Veiculo() {
         ligado = false;
+        velocidade = 0;
     }
 
     public Veiculo(String nome, String marca, String chassi, int quantidadeRodas) {
@@ -42,7 +46,7 @@ public class Veiculo {
         return chassi;
     }
 
-    public void setChassi(String chassi) throws Exception {
+    public void setChassi(String chassi) throws ChassiInvalidoException {
         if (chassi.length() == 5) {
             this.chassi = chassi;
         } else {            
@@ -58,13 +62,19 @@ public class Veiculo {
         return ligado;
     }
 
+    public double getVelocidade() {
+        return velocidade;
+    }
+
     public void ligar() {
         ligado = true;
+        velocidade = 0;
         System.out.println("O carro foi ligado!");
     }
 
     public void desligar() {
         ligado = false;
+        velocidade = 0;
         System.out.println("O carro foi desligado");
     }
 
@@ -77,6 +87,22 @@ public class Veiculo {
             quantidadeCombustivel += quantidadeLitros;
         } else {
             throw new AbastecimentoVeiculoLigadoException();
+        }
+    }
+
+    public void acelerar() throws AceleracaoVeiculoLigadoException {
+        if (ligado) {
+            velocidade += 10;
+        } else {
+            throw new AceleracaoVeiculoLigadoException();
+        }
+    }
+
+    public void frear() throws FrenagemVeiculoDesligadoException {
+        if (ligado) {
+            velocidade -= 10;
+        } else {
+            throw new FrenagemVeiculoDesligadoException();
         }
     }
 }
