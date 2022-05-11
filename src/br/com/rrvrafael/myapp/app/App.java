@@ -3,7 +3,6 @@ package br.com.rrvrafael.myapp.app;
 import java.util.Scanner;
 
 import br.com.rrvrafael.myapp.classes.Carro;
-import br.com.rrvrafael.myapp.classes.Moto;
 import br.com.rrvrafael.myapp.classes.Veiculo;
 import br.com.rrvrafael.myapp.exceptions.AbastecimentoVeiculoLigadoException;
 import br.com.rrvrafael.myapp.exceptions.AceleracaoVeiculoLigadoException;
