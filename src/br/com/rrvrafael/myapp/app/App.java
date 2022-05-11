@@ -6,7 +6,9 @@ import br.com.rrvrafael.myapp.classes.Carro;
 import br.com.rrvrafael.myapp.classes.Moto;
 import br.com.rrvrafael.myapp.classes.Veiculo;
 import br.com.rrvrafael.myapp.exceptions.AbastecimentoVeiculoLigadoException;
+import br.com.rrvrafael.myapp.exceptions.AceleracaoVeiculoLigadoException;
 import br.com.rrvrafael.myapp.exceptions.ChassiInvalidoException;
+import br.com.rrvrafael.myapp.exceptions.FrenagemVeiculoDesligadoException;
 
 public class App {
     public static void main(String[] args) {
@@ -29,20 +31,20 @@ public class App {
             System.out.printf("Foram abastecidos %.2f litros.\n", corsa.getQuantidadeCombustivel());
             corsa.ligar();
             corsa.abastecer(50);
-
-            Moto titan = new Moto("CG", "Honda");
-            titan.setChassi("EFDGK");
-
-            System.out.println("\nNome do veículo: " + titan.getNome());
-            System.out.println("Marca do veículo: " + titan.getMarca());
-            System.out.println("Quantidade de rodas do veículo: " + titan.getQuantidadeRodas());
-            System.out.println("Número do chassi do veículo: " + titan.getChassi());
-            System.out.println("Moto ligada: " + titan.isLigado());
+            System.out.println("Velocidade do carro: " + corsa.getVelocidade());
+            corsa.acelerar();
+            System.out.println("Velocidade do carro: " + corsa.getVelocidade());
+            corsa.frear();
+            System.out.println("Velocidade do carro: " + corsa.getVelocidade());
 
             System.out.printf("Foram abastecidos %.2f litros.\n", corsa.getQuantidadeCombustivel());
         } catch (AbastecimentoVeiculoLigadoException e) {
             System.out.println("Ocorreu o erro: " + e.getMessage());
         } catch (ChassiInvalidoException e) {
+            System.out.println("Ocorreu o erro: " + e.getMessage());
+        } catch (AceleracaoVeiculoLigadoException e) {
+            System.out.println("Ocorreu o erro: " + e.getMessage());
+        } catch (FrenagemVeiculoDesligadoException e) {
             System.out.println("Ocorreu o erro: " + e.getMessage());
         } catch (Exception e) {
             System.out.println("Ocorreu o erro: " + e.getMessage());

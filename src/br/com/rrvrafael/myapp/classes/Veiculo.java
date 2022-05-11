@@ -12,7 +12,7 @@ public class Veiculo {
     protected int quantidadeRodas;
     private double quantidadeCombustivel;
     private boolean ligado;
-    private double velocidade;
+    protected double velocidade;
     
     public Veiculo() {
         ligado = false;
