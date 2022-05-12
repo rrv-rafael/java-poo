@@ -58,6 +58,10 @@ public abstract class Veiculo {
         return quantidadeRodas;
     }
 
+    public double getQuantidadeCombustivel() {
+        return quantidadeCombustivel;
+    }
+
     public boolean isLigado() {
         return ligado;
     }
@@ -66,23 +70,19 @@ public abstract class Veiculo {
         return velocidade;
     }
 
-    public void ligar() {
+    public final void ligar() {
         ligado = true;
         velocidade = 0;
         System.out.println("O carro foi ligado!");
     }
 
-    public void desligar() {
+    public final void desligar() {
         ligado = false;
         velocidade = 0;
         System.out.println("O carro foi desligado");
     }
 
-    public double getQuantidadeCombustivel() {
-        return quantidadeCombustivel;
-    }
-
-    public void abastecer(double quantidadeLitros) throws AbastecimentoVeiculoLigadoException {
+    public final void abastecer(double quantidadeLitros) throws AbastecimentoVeiculoLigadoException {
         if (!isLigado()) {
             quantidadeCombustivel += quantidadeLitros;
         } else {
@@ -105,4 +105,6 @@ public abstract class Veiculo {
             throw new FrenagemVeiculoDesligadoException();
         }
     }
+
+    public abstract void preparar();
 }

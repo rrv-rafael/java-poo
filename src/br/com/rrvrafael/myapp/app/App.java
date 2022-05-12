@@ -27,6 +27,7 @@ public class App {
             System.out.println("Carro ligado: " + corsa.isLigado());
 
             corsa.abastecer(35);
+            corsa.preparar();
             System.out.printf("Foram abastecidos %.2f litros.\n", corsa.getQuantidadeCombustivel());
             corsa.ligar();
             corsa.abastecer(50);

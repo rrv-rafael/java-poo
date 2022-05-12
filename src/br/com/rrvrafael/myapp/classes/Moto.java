@@ -31,4 +31,9 @@ public final class Moto extends Veiculo {
             throw new FrenagemVeiculoDesligadoException();
         }
     }
+
+    @Override
+    public void preparar() {
+        System.out.println("Colocar capacete!");        
+    }
 }
