@@ -1,6 +1,6 @@
 package br.com.rrvrafael.myapp.classes;
 
-public final class Carro extends Veiculo {
+public final class Carro extends VeiculoBase {
     private int quantidadePortas;
 
     public Carro() {

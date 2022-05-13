@@ -4,8 +4,11 @@ import br.com.rrvrafael.myapp.exceptions.AbastecimentoVeiculoLigadoException;
 import br.com.rrvrafael.myapp.exceptions.AceleracaoVeiculoLigadoException;
 import br.com.rrvrafael.myapp.exceptions.ChassiInvalidoException;
 import br.com.rrvrafael.myapp.exceptions.FrenagemVeiculoDesligadoException;
+import br.com.rrvrafael.myapp.interfaces.Andador;
+import br.com.rrvrafael.myapp.interfaces.Ligador;
+import br.com.rrvrafael.myapp.interfaces.Veiculo;
 
-public abstract class Veiculo {
+public abstract class VeiculoBase implements Veiculo, Ligador, Andador {
     private String nome;
     private String marca;
     private String chassi;
@@ -14,12 +17,12 @@ public abstract class Veiculo {
     private boolean ligado;
     protected double velocidade;
     
-    public Veiculo() {
+    public VeiculoBase() {
         ligado = false;
         velocidade = 0;
     }
 
-    public Veiculo(String nome, String marca, String chassi, int quantidadeRodas) {
+    public VeiculoBase(String nome, String marca, String chassi, int quantidadeRodas) {
         this.nome = nome;
         this.marca = marca;
         this.chassi = chassi;

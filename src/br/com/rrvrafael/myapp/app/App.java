@@ -3,7 +3,7 @@ package br.com.rrvrafael.myapp.app;
 import java.util.Scanner;
 
 import br.com.rrvrafael.myapp.classes.Carro;
-import br.com.rrvrafael.myapp.classes.Veiculo;
+import br.com.rrvrafael.myapp.classes.VeiculoBase;
 import br.com.rrvrafael.myapp.exceptions.AbastecimentoVeiculoLigadoException;
 import br.com.rrvrafael.myapp.exceptions.AceleracaoVeiculoLigadoException;
 import br.com.rrvrafael.myapp.exceptions.ChassiInvalidoException;
@@ -15,7 +15,7 @@ public class App {
 
         try {
             // Carro corsa = new Carro("Corsa", "GM");
-            Veiculo corsa = new Carro("Corsa", "GM");
+            VeiculoBase corsa = new Carro("Corsa", "GM");
             corsa.setChassi("ABCDE");
             ((Carro)corsa).setQuantidadePortas(4);
 
@@ -36,6 +36,7 @@ public class App {
             System.out.println("Velocidade do carro: " + corsa.getVelocidade());
             corsa.frear();
             System.out.println("Velocidade do carro: " + corsa.getVelocidade());
+            corsa.desligar();
 
             System.out.printf("Foram abastecidos %.2f litros.\n", corsa.getQuantidadeCombustivel());
         } catch (AbastecimentoVeiculoLigadoException e) {
